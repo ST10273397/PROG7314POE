@@ -75,15 +75,17 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPickFromDashboard"
-            style="@style/Widget.Material3.Button"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minHeight="@dimen/touch_target"
             android:text="Pick from dashboard"
             app:cornerRadius="@dimen/radius_m"
-            app:backgroundTint="?attr/colorPrimary"
-            android:textColor="?attr/colorOnPrimary" />
+            app:strokeColor="?attr/colorOutline"
+            app:strokeWidth="1dp"
+            app:backgroundTint="?attr/colorSurface"
+            android:textColor="?attr/colorOnSurface" />
     </LinearLayout>
 
     <!-- DAY OF WEEK LABELS -->
@@ -133,14 +135,14 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="?attr/colorOnSurface" />
+            android:textColor="#1A2A46" />
 
         <TextView
             android:id="@+id/emptyDayText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="No events"
-            android:textColor="?attr/colorOnSurface"
+            android:textColor="#1A2A46"
             android:paddingTop="@dimen/space_2" />
 
         <LinearLayout

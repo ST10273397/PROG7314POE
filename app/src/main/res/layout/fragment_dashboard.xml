@@ -12,13 +12,15 @@
         android:id="@+id/txtTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/space_2"
-        android:paddingBottom="@dimen/space_4"
+        android:paddingTop="@dimen/space_4"
+        android:paddingBottom="@dimen/space_2"
         android:textSize="28sp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-condensed"
         android:textColor="?attr/colorOnBackground"
-        android:text="12:34 — Tue, 07 Oct" />
+        android:text="12:34 — Tue, 07 Oct"
+        android:gravity="center_horizontal"
+        android:textAlignment="center" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"

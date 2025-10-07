@@ -30,6 +30,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.database.FirebaseDatabase
+import androidx.appcompat.app.AppCompatDelegate
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,49 +62,67 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        auth = Firebase.auth
+        //SEGMENT theme init - apply saved dark mode before UI inflates
+        //-----------------------------------------------------------------------------------------------
+        val prefs = getSharedPreferences("app_prefs", MODE_PRIVATE) // read saved prefs
+        val enabled = prefs.getBoolean("dark_mode", false) // read flag
+        val desired = if (enabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO // pick mode
+        if (AppCompatDelegate.getDefaultNightMode() != desired) {
+            AppCompatDelegate.setDefaultNightMode(desired) // apply if different
+        }
+        //-----------------------------------------------------------------------------------------------
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnSignUp = findViewById<Button>(R.id.btnSignUp)
-        val googleLoginBtn = findViewById<LinearLayout>(R.id.btnGoogleLogin)
-        val googleSignUpBtn = findViewById<LinearLayout>(R.id.btnGoogleSignUp)
+        //SEGMENT firebase auth - init auth
+        //-----------------------------------------------------------------------------------------------
+        auth = Firebase.auth // set firebase auth
+        //-----------------------------------------------------------------------------------------------
 
+        //SEGMENT inflate UI - set the main layout
+        //-----------------------------------------------------------------------------------------------
+        setContentView(R.layout.activity_main) // inflate
+        //-----------------------------------------------------------------------------------------------
+
+        //SEGMENT view refs - grab buttons and rows
+        //-----------------------------------------------------------------------------------------------
+        val btnLogin = findViewById<Button>(R.id.btnLogin) // login button
+        val btnSignUp = findViewById<Button>(R.id.btnSignUp) // sign up button
+        val googleLoginBtn = findViewById<LinearLayout>(R.id.btnGoogleLogin) // google login row
+        val googleSignUpBtn = findViewById<LinearLayout>(R.id.btnGoogleSignUp) // google signup row
+        //-----------------------------------------------------------------------------------------------
+
+        //SEGMENT simple nav - email login and register screens
+        //-----------------------------------------------------------------------------------------------
         btnLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, LoginActivity::class.java)) // go to login
         }
-
         btnSignUp.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, RegisterActivity::class.java)) // go to register
         }
+        //-----------------------------------------------------------------------------------------------
 
-        // Google Sign-In (login)
-        googleLoginBtn.setOnClickListener {
-            launchGoogleSignIn()
-        }
-
-        // Google Sign-Up (same flow, just semantic difference)
-        googleSignUpBtn.setOnClickListener {
-            launchGoogleSignIn()
-        }
-
-        // Configure Google Sign In
+        //SEGMENT google sign in - configure GSO and handlers
+        //-----------------------------------------------------------------------------------------------
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id)) // From Google Services JSON
-            .requestEmail()
-            .build()
+            .requestIdToken(getString(R.string.default_web_client_id)) // from google services
+            .requestEmail() // request email
+            .build() // build gso
 
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso) // create client
 
-        googleLoginBtn.setOnClickListener {
-            val signInIntent = googleSignInClient.signInIntent
-            startActivityForResult(signInIntent, RC_SIGN_IN)
+        //SUB-SEGMENT hook up both google rows to the same handler
+        //-------------------------------------------------
+        val startGoogle = {
+            val signInIntent = googleSignInClient.signInIntent // intent
+            startActivityForResult(signInIntent, RC_SIGN_IN) // launch
         }
+        googleLoginBtn.setOnClickListener { startGoogle() } // tap to start
+        googleSignUpBtn.setOnClickListener { startGoogle() } // same flow
+        //-------------------------------------------------
+        //-----------------------------------------------------------------------------------------------
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

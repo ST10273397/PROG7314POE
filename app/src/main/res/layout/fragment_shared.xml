@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pad_screen"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleShared"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sharing"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="22sp"
+            android:textColor="?attr/colorOnBackground"
+            android:paddingBottom="@dimen/space_4"/>
+
+        <TextView
+            android:id="@+id/placeholderShared"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blank screen ready for sharing features"
+            android:textColor="?attr/colorOnBackground"/>
+    </LinearLayout>
+</ScrollView>

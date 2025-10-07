@@ -15,12 +15,17 @@
         android:label="@string/nav_calendars" />
 
     <fragment
-        android:id="@+id/nav_profile"
-        android:name="com.example.prog7314progpoe.ui.placeholders.ProfileFragment"
-        android:label="@string/nav_profile" />
+        android:id="@+id/nav_custom"
+        android:name="com.example.prog7314progpoe.ui.custom.CustomFragment"
+        android:label="Custom" />
+
+    <fragment
+        android:id="@+id/nav_shared"
+        android:name="com.example.prog7314progpoe.ui.sharing.SharingFragment"
+        android:label="Shared" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.prog7314progpoe.ui.placeholders.SettingsFragment"
+        android:name="com.example.prog7314progpoe.ui.settings.SettingsFragment"
         android:label="@string/nav_settings" />
 </navigation>

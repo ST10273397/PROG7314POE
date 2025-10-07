@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_3"
                 android:text="Continue with Google"
-                android:textColor="?attr/colorOnBackground"
+                android:textColor="#0B1220"
                 android:textSize="16sp"
                 android:fontFamily="sans-serif-medium" />
         </LinearLayout>
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/space_3"
                 android:text="Sign Up with Google"
-                android:textColor="?attr/colorOnBackground"
+                android:textColor="#0B1220"
                 android:textSize="16sp"
                 android:fontFamily="sans-serif-medium" />
         </LinearLayout>
