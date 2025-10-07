@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/holidayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Holiday Name"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/holidayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2025-01-01"
+        android:textSize="14sp"
+        android:textColor="#666" />
+
+    <TextView
+        android:id="@+id/holidayType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type: National Holiday"
+        android:textSize="14sp"
+        android:textColor="#444" />
+
+</LinearLayout>
