@@ -18,14 +18,14 @@ object FirebaseCalendarDbHelper {
         ownerId: String,
         title: String,
         holidays: List<HolidayModel>? = null,
-        onComplete: () -> Unit = {}
+        onComplete: (String?) -> Unit = {} // pass back the calendar ID (or null if failed)
     ) {
-        val key = db.child("calendars").push().key ?: return
+        val key = db.child("calendars").push().key ?: return onComplete(null)
 
         val holidayMap = holidays?.associateBy { it.holidayId ?: db.child("calendars").push().key!! }
 
         val calendar = CalendarModel(
-            calendarId = key,
+            calendarId = "UM-$key",
             title = title,
             ownerId = ownerId,
             sharedWith = mapOf(ownerId to true),
@@ -37,8 +37,15 @@ object FirebaseCalendarDbHelper {
             "/user_calendars/$ownerId/$key" to true
         )
 
-        db.updateChildren(updates).addOnCompleteListener { onComplete() }
+        db.updateChildren(updates).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                onComplete("UM-$key") // send back the new calendar ID
+            } else {
+                onComplete(null)
+            }
+        }
     }
+
 
     // Share calendar with another user
     fun shareCalendar(calendarId: String, userId: String, onComplete: () -> Unit = {}) {

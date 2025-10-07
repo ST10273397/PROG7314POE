@@ -211,16 +211,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    Use this to assign the current user to what they have made.
-    val currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: return
-    FirebaseCalendarDbHelper.insertCalendar(
-    ownerId = currentUserId,
-    title = "My Calendar",
-    holidays = null
-    ) {
-        // Calendar created
-    }
-    */
-
 }

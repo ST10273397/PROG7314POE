@@ -9,16 +9,16 @@ data class HolidayList(
 )
 
 data class HolidayModel(
-    var holidayId: String, //Mapping to the firebase key
+    var holidayId: String?, //Mapping to the firebase key
     val name: String,
     val desc: String,
     val date: DateInfo?,
-    val dateStart: DateInfo?,  //Optional if holiday extends past initial day
-    val dateEnd: DateInfo?,
-    val timeStart: Long,
-    val timeEnd: Long,
+    val dateStart: DateInfo? = null,  //Optional if holiday extends past initial day
+    val dateEnd: DateInfo? = null,
+    val timeStart: Long? = null,
+    val timeEnd: Long? = null,
     val repeat: List<String>? = listOf("Daily", "Weekly", "Monthly", "Annually"),
-    val type: List<String>? // Example: ["National holiday", "Religious"]
+    val type: List<String>? = null // Example: ["National holiday", "Religious"]
     ){
     constructor() : this(" ","", "",
         null, null, null,

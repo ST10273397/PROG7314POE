@@ -15,12 +15,12 @@ object FirebaseHolidayDbHelper {
         holiday: HolidayModel,
         onComplete: () -> Unit = {}
     ) {
-        val holidayId = holiday.holidayId.ifEmpty { db.child("calendars/$calendarId/holidays").push().key!! }
+        val holidayId = holiday.holidayId?.ifEmpty { db.child("calendars/$calendarId/holidays").push().key!! }
         holiday.holidayId = holidayId
 
-        db.child("calendars").child(calendarId).child("holidays").child(holidayId)
-            .setValue(holiday)
-            .addOnCompleteListener { onComplete() }
+        holidayId?.let { db.child("calendars").child(calendarId).child("holidays").child(it) }
+            ?.setValue(holiday)
+            ?.addOnCompleteListener { onComplete() }
     }
 
     // Update an existing holiday
@@ -29,12 +29,12 @@ object FirebaseHolidayDbHelper {
         holiday: HolidayModel,
         onComplete: (Boolean) -> Unit
     ) {
-        if (holiday.holidayId.isEmpty()) {
+        if (holiday.holidayId?.isEmpty() ?: return) {
             onComplete(false)
             return
         }
 
-        db.child("calendars").child(calendarId).child("holidays").child(holiday.holidayId)
+        db.child("calendars").child(calendarId).child("holidays").child(holiday.holidayId!!)
             .setValue(holiday)
             .addOnSuccessListener { onComplete(true) }
             .addOnFailureListener { onComplete(false) }

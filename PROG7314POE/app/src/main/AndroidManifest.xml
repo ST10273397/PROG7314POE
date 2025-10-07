@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prog7314">
         <activity
-            android:name=".CreateEventActivity"
+            android:name=".ui.custom.CreateEventActivity"
             android:exported="false" />
         <activity
             android:name=".CreateEvent"

@@ -22,23 +22,20 @@
         android:text="Title" />
 
     <TextView
-        android:id="@+id/tv_Image"
+        android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Image:"
+        android:text="Description"
         android:textSize="48sp" />
 
-    <ImageView
-        android:id="@+id/iv_CalendarPic"
-        android:layout_width="277dp"
-        android:layout_height="250dp"
-        app:srcCompat="@drawable/chronosync_logo" />
-
-    <Button
-        android:id="@+id/btn_upload"
+    <EditText
+        android:id="@+id/et_desc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Upload" />
+        android:layout_height="62dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine" />
 
     <LinearLayout
         android:id="@+id/lo_buttons"
