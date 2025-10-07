@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
     android:padding="@dimen/pad_screen"
-    tools:context=".ui.calendars.CalendarsFragment">
+    tools:context=".ui.placeholders.CalendarsFragment">
 
     <!-- HEADER: month nav and source pickers -->
     <LinearLayout
