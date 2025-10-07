@@ -3,16 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:padding="@dimen/pad_screen">
 
     <!-- Big time header -->
     <TextView
         android:id="@+id/txtTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingTop="@dimen/space_2"
+        android:paddingBottom="@dimen/space_4"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="?attr/colorOnBackground"
         android:text="12:34 — Tue, 07 Oct" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -25,6 +30,6 @@
             android:id="@+id/recyclerSlots"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"/>
+            android:padding="@dimen/space_2"/>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
