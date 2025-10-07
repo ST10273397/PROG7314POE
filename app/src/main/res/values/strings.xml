@@ -16,7 +16,8 @@
     <string name="picker_custom_calendar">Custom Calendar (by ID)</string>
     <string name="next_event_prefix">Next:</string>
     <string name="no_upcoming">No upcoming events</string>
-
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_mine">Mine</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

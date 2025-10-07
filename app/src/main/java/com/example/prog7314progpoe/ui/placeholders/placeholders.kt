@@ -7,10 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.prog7314progpoe.R
 
-class CalendarsFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-        inflater.inflate(R.layout.fragment_placeholder, container, false)
-}
 
 class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
