@@ -1,49 +1,97 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9EADDDFF"
-    android:gravity="center|top"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="?android:attr/colorBackground">
 
-    <ImageView
-        android:layout_width="328dp"
-        android:layout_height="299dp"
-        android:contentDescription="Logo"
-        android:src="@drawable/chronosync_logo" />
-
-    <EditText
-        android:id="@+id/etEmail"
-        style="@android:style/Widget.Material.AutoCompleteTextView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:hint="Email"
-        android:lineSpacingExtra="8sp" />
+        android:orientation="vertical"
+        android:padding="@dimen/pad_screen"
+        android:gravity="top">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:contentDescription="Logo"
+            android:src="@drawable/chronosync_logo" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_green_dark"
-        android:text="LOGIN"
-        android:textColor="@android:color/white" />
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:text="Log in"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Sign Up"
-        android:textColor="@android:color/holo_blue_dark" />
+        <!-- Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            app:boxCornerRadiusTopStart="@dimen/radius_m"
+            app:boxCornerRadiusTopEnd="@dimen/radius_m"
+            app:boxCornerRadiusBottomStart="@dimen/radius_m"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_m">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:fontFamily="sans-serif" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+        <!-- Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_3"
+            app:boxCornerRadiusTopStart="@dimen/radius_m"
+            app:boxCornerRadiusTopEnd="@dimen/radius_m"
+            app:boxCornerRadiusBottomStart="@dimen/radius_m"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_m">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="sans-serif" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Login -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6"
+            android:minHeight="@dimen/touch_target"
+            app:cornerRadius="@dimen/radius_m"
+            android:text="Log in"
+            app:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary" />
 
+        <!-- Register link -->
+        <TextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:text="Create an account"
+            android:textColor="?attr/colorOutline"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+</ScrollView>

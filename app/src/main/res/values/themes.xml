@@ -1,9 +1,36 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.PROG7314ProgPoe" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Prog7314" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Core scheme -->
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="colorOnBackground">@color/on_bg</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorError">@color/error</item>
+
+        <!-- Shape: rounded app-wide -->
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Rounded.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Rounded.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.Rounded.Large</item>
+
+        <!-- Typography fallback (we’ll use explicit TextAppearances below) -->
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
-    <style name="Theme.PROG7314ProgPoe" parent="Base.Theme.PROG7314ProgPoe" />
+    <!-- Rounded shapes -->
+    <style name="Shape.Rounded.Small">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_s</item>
+    </style>
+    <style name="Shape.Rounded.Medium">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_m</item>
+    </style>
+    <style name="Shape.Rounded.Large">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_l</item>
+    </style>
 </resources>

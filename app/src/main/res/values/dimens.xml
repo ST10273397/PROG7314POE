@@ -1,3 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Spacing scale -->
+    <dimen name="space_0">0dp</dimen>
+    <dimen name="space_1">4dp</dimen>
+    <dimen name="space_2">8dp</dimen>
+    <dimen name="space_3">12dp</dimen>
+    <dimen name="space_4">16dp</dimen>
+    <dimen name="space_5">20dp</dimen>
+    <dimen name="space_6">24dp</dimen>
+    <dimen name="space_8">32dp</dimen>
+    <dimen name="space_10">40dp</dimen>
+
+    <!-- Rounder corners -->
+    <dimen name="radius_s">12dp</dimen>
+    <dimen name="radius_m">16dp</dimen>
+    <dimen name="radius_l">24dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
+    <dimen name="radius_pill">999dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elev_0">0dp</dimen>
+    <dimen name="elev_1">1dp</dimen>
+    <dimen name="elev_2">3dp</dimen>
+    <dimen name="elev_3">6dp</dimen>
+    <dimen name="elev_4">8dp</dimen>
+    <dimen name="elev_5">12dp</dimen>
+
+    <!-- Common paddings -->
+    <dimen name="pad_screen">20dp</dimen>
+    <dimen name="pad_card">16dp</dimen>
+    <dimen name="pad_field">14dp</dimen>
+
+    <!-- Touch target -->
+    <dimen name="touch_target">48dp</dimen>
+
+    <!-- Keep any existing dimen like fab_margin if you use it -->
     <dimen name="fab_margin">16dp</dimen>
 </resources>

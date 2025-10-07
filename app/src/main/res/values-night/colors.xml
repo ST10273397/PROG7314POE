@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark palette -->
+    <color name="brand_primary">#9DADCB</color>
+    <color name="bg">#0E1626</color>
+    <color name="surface">#1A2A46</color>
+
+    <color name="on_primary">#0B1220</color>
+    <color name="on_bg">#E8E8FF</color>
+    <color name="on_surface">#E8E8FF</color>
+
+    <color name="outline">#9DADCB</color>
+    <color name="success">#2BB673</color>
+    <color name="error">#E53935</color>
+</resources>

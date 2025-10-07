@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Light palette -->
+    <color name="brand_primary">#174C89</color>
+    <color name="bg">#E8E8FF</color>
+    <color name="surface">#9DACCB</color>
+
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_bg">#0B1220</color>
+    <color name="on_surface">#0B1220</color>
+
+    <color name="outline">#174C89</color>
+    <color name="success">#2BB673</color>
+    <color name="error">#E53935</color>
 </resources>
